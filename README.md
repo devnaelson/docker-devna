@@ -21,5 +21,5 @@ repo to learn more about docker technology
 ————————————
 # System
 - docker stats
-: docker system df
-: docker system prune
+- docker system df
+- docker system prune
