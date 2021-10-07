@@ -20,6 +20,6 @@ repo to learn more about docker technology
 : docker stop
 ————————————
 # System
-: docker stats
+- docker stats
 : docker system df
 : docker system prune
