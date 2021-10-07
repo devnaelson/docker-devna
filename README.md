@@ -2,22 +2,22 @@
 repo to learn more about docker technology 
 
 # Basic
-: docker version
-: docker -v
-: docker info
-: docker --help
-: docker login
+- docker version
+- docker -v
+- docker info
+- docker --help
+-  docker login
 ————————————
 # Images
-: docker images
-: docker pull
-: docker rmi
+- docker images
+- docker pull
+- docker rmi
 ————————————
 # Containers
-: docker ps
-: docker run
-: docker start
-: docker stop
+- docker ps
+- docker run
+- docker start
+- docker stop
 ————————————
 # System
 - docker stats
