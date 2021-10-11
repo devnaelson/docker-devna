@@ -5,4 +5,6 @@
 FROM nginx:latest
 MAINTAINER NAME EMAIL
 
+COPY ./app /usr/share/nginx/html
+
 RUN apt-get -y update && apt-get -y upgrade && apt-get install -y php-fpm

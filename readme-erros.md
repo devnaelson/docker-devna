@@ -9,3 +9,10 @@
 - OK, i will uncommented again the file dockerfile all lines that was commented
 # Building web
 # ERROR: Cannot locate specified Dockerfile: Dockerfile
+
+- ___________________________________________
+
+# images 
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /opt/lampp/htdocs/Dockerfile: no such file or directory
+- been resolve when me into from folder where's my file of name called Dockerfile as soon as what i been get in of folder and run commad -> it was ok
+- sudo docker build -t webserver .
