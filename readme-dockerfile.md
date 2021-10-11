@@ -5,12 +5,49 @@
 
 ```
  docker build -f /path/to/a/Dockerfile .
-
  ```
 - You can specify a repository and tag at which to save the new image if the build succeeds:
 
+ ```
  docker build -t shykes/myapp .
+ ```
 
 - To tag the image into multiple repositories after the build, add multiple -t parameters when you run the build command:
-
+ 
+ ```
 - docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .
+ ```
+
+# ARG
+- ARG <name>[=<default value>]
+- The ARG instruction defines a variable that users can pass at build-time to the builder with the docker build command using the --build-arg <varname>=<value> flag. If a user specifies a build argument that was not defined in the Dockerfile, the build outputs a warning.
+
+- A Dockerfile may include one or more ARG instructions. For example, the following is a valid Dockerfile:
+ ```
+FROM busybox
+ARG user1
+ARG buildno
+ ```
+# ...
+# Warning:
+- It is not recommended to use build-time variables for passing secrets like github keys, user credentials etc. Build-time variable values are visible to any user of the image with the docker history command.
+- Refer to the “build images with BuildKit” section to learn about secure ways to use secrets when building images.
+- Default values
+- An ARG instruction can optionally include a default value:
+
+ ```
+FROM busybox
+ARG user1=someuser
+ARG buildno=1
+ ```
+# ...
+- If an ARG instruction has a default value and if there is no value passed at build-time, the builder uses the default.
+
+- Scope
+- An ARG variable definition comes into effect from the line on which it is defined in the Dockerfile not from the argument’s use on the command-line or elsewhere. For example, consider this Dockerfile:
+ ```
+FROM busybox
+USER ${user:-some_user}
+ARG user
+USER $user
+ ```
