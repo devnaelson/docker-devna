@@ -37,15 +37,18 @@ Login to the Docker Hub using the command docker login -u YOUR-USER-NAME.
 # Images
 can do this by consolidating multiple commands into a single RUN line and using your shell’s mechanisms to combine them together. Consider the following two fragments. The first creates two layers in the image, while the second only creates one.
 
-- this execute ngnix
-`
+``` this execute ngnix
+
 sudo docker run --name run-website -d -p 8080:80 webserver 
-`
--  delete image plus force -f
-`
+
+```
+
+```  delete image plus force -f
+
 sudo docker rmi -f webserver
-`
-- buil an image plus -t give it tag custom name
-`
+```
+``` buil an image plus -t give it tag custom name
+
 sudo docker build -t webserver .
-`
+
+```
