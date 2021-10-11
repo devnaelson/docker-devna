@@ -35,6 +35,9 @@ Login to the Docker Hub using the command docker login -u YOUR-USER-NAME.
 - docker tag getting-started YOUR-USER-NAME/getting-started
 
 # Images
+
+- none image list meaning that anythings happen on proccess of instalation 
+
 can do this by consolidating multiple commands into a single RUN line and using your shell’s mechanisms to combine them together. Consider the following two fragments. The first creates two layers in the image, while the second only creates one.
 
 - this execute ngnix
@@ -53,4 +56,15 @@ sudo docker rmi -f webserver
 
 sudo docker build -t webserver .
 
+```
+
+- List All Docker Containers
+- To show all Docker containers, run:
+
+```
+$ docker ps -a
+```
+– or –
+```
+$ docker ps --all
 ```
