@@ -6,7 +6,7 @@ repo to learn more about docker technology
 - docker -v
 - docker info
 - docker --help
--  docker login
+- docker login
 ————————————
 # Images
 - docker images
@@ -23,3 +23,13 @@ repo to learn more about docker technology
 - docker stats
 - docker system df
 - docker system prune
+
+
+Why did it fail? The push command was looking for an image named docker/getting-started, but didn’t find one. If you run docker image ls, you won’t see one either.
+
+To fix this, we need to “tag” our existing image we’ve built to give it another name.
+
+Login to the Docker Hub using the command docker login -u YOUR-USER-NAME.
+
+# Use the docker tag command to give the getting-started image a new name. Be sure to swap out YOUR-USER-NAME with your Docker ID.
+- docker tag getting-started YOUR-USER-NAME/getting-started
