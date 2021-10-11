@@ -12,7 +12,14 @@
 
 - ___________________________________________
 
-# images 
+# images
+- 1
 unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /opt/lampp/htdocs/Dockerfile: no such file or directory
 - been resolve when me into from folder where's my file of name called Dockerfile as soon as what i been get in of folder and run commad -> it was ok
 - sudo docker build -t webserver .
+- 1
+Step 3/4 : COPY ./app /usr/share/nginx/html
+COPY failed: file not found in build context or excluded by .dockerignore: stat app: file does not exist
+- been solve when did i create a folder of name app into my folder that's together dockerfile
+- probably other solution could be make before this line COPY ./app /usr/share/nginx/html 
+- is create touch command for make a folder 
