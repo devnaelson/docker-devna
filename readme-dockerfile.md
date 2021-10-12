@@ -55,4 +55,6 @@ USER $user
  - The environment variables set using ENV will persist when a container is run from the resulting image. 
   ```
  You can view the values using docker inspect, and change them using docker run --env <key>=<value>.
+ WARNING-ERROR "docker run" requires at least 1 argument.
+ SOLVE IT: Problem is not with docker, you just didn't specify which image to run.maybe don't have in dockerfile
  ```
