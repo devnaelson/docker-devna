@@ -51,3 +51,8 @@ USER ${user:-some_user}
 ARG user
 USER $user
  ```
+
+ - The environment variables set using ENV will persist when a container is run from the resulting image. 
+  ```
+ You can view the values using docker inspect, and change them using docker run --env <key>=<value>.
+ ```
