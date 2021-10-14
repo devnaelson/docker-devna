@@ -4,29 +4,29 @@ services:
 
   servidor:
     build:
-     context: ./images-nginx
-     dockerfile: Dockerfile
+      context: ./images-nginx
+      dockerfile: Dockerfile
     networks:
-     - code
+      - code
     image: nginx
     restart: always
     ports:
-    - "8080:80"
+      - "8080:80"
     volumes:
       - ./images-nginx/app:/usr/share/nginx/html
 
   language:
     build:
-     context: ./php-dk
-     dockerfile: Dockerfile
+      context: ./php-dk
+      dockerfile: Dockerfile
     networks:
-     - code
+      - code
     image: php
-    ports:
-     - "9000:9000"
+    expose:
+      - "9000"   
     volumes:
      - ./images-nginx/app:/usr/share/nginx/html
-
-    networks:
-     code:
-       driver: bridge
+     
+networks:
+  code:
+    driver: bridge
