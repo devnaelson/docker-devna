@@ -60,3 +60,7 @@ Delete all volumes using the following command:
 docker volume rm $(docker volume ls -q)
 Restart the containers using the following command:
 docker-compose up -d
+
+# Each container has its own localhost
+- Nginx and PHP are running in two different containers, so PHP is not running on localhost (from Nginx's perspective).
+- Since your PHP container is named "php", you don't want to connect to this:

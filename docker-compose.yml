@@ -38,7 +38,9 @@ services:
   servidor:
     build:
      context: ./images-nginx
+     dockerfile: Dockerfile
     image: nginx
+    restart: always
     ports:
     - "8080:80"
     volumes:
@@ -47,6 +49,7 @@ services:
   language:
     build:
      context: ./php-dk
+     dockerfile: Dockerfile
     image: php
     ports:
     - "8080:80"
