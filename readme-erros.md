@@ -64,3 +64,37 @@ docker-compose up -d
 # Each container has its own localhost
 - Nginx and PHP are running in two different containers, so PHP is not running on localhost (from Nginx's perspective).
 - Since your PHP container is named "php", you don't want to connect to this:
+
+
+# ERRORS {
+  
+  # Command 'docker-compose' not found, but can be installed with: sudo apt  install docker-compose
+  # ready for connections. Version: '8.0.26'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL. : sudo docker-compose up -d and again run
+  # stoping web_1  | 2021/10/09 11:53:42 [notice] 1#1: start worker process 29: needed docker image
+
+  #  }  
+#-----------
+# if you want to rebuild your images, you write docker-compose up --build
+#-----------
+#sudo docker-compose down
+#-----------
+#Docker Compose
+# - is a tool for defining and running multi-container Docker applications.
+# - define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment.
+# - get an app running in one command by just running docker-compose up
+#-----------
+# So now, to build the stack, go back to the terminal window, make sure you're in your build directory, and issue the command:
+#sudo docker-compose up
+#-----------
+# The above command will deploy both the web and db containers. If you only run that command, the containers will deploy in attached mode, 
+# so you won't get your bash prompt returned. If you want to run them in detached mode, you'd issue the command:
+#sudo docker-compose up -d
+
+
+#what i did understand this
+# Composer executa multiplos serviços "containers"
+# Dockerfile instala e configura
+
+#version:'3' <-- this is wrong
+
+#version: '3' <-- this is correct.
