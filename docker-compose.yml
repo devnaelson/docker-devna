@@ -34,9 +34,21 @@
 version: '3'
 
 services:
-  web:
+
+  servidor:
     build:
      context: ./images-nginx
     image: nginx
     ports:
     - "8080:80"
+    volumes:
+      - ./images-nginx/app:/usr/share/nginx/html
+
+  language:
+    build:
+     context: ./php-dk
+    image: php
+    ports:
+    - "8080:80"
+    volumes:
+      - ./images-nginx/app:/usr/share/nginx/html
