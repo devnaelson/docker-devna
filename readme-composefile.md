@@ -1,3 +1,5 @@
+# https://docs.docker.com/compose/compose-file/compose-file-v3/#compose-file-structure-and-examples
+
 # context
 - Either a path to a directory containing a Dockerfile, or a url to a git repository.
 - When the value supplied is a relative path, it is interpreted as relative to the location of the Compose file. This directory is also the build context that is sent to the Docker daemon.

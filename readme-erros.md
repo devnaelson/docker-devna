@@ -98,3 +98,24 @@ docker-compose up -d
 #version:'3' <-- this is wrong
 
 #version: '3' <-- this is correct.
+
+# ERROR: The Compose file './docker-compose.yml' is invalid because
+- https://stackoverflow.com/questions/56225523/the-compose-file-docker-compose-yml-is-invalid-because-unsupported-config-o/56226260
+- networks should be at version level
+version: '3.8'
+services:
+  web:
+    build:
+      args:
+        version: 0.0.1
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - back-tier
+    expose:
+      - 8080
+    ports:
+    - 8080:8080
+networks:
+  back-tier:
+    driver: bridge
