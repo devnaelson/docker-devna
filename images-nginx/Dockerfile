@@ -3,7 +3,7 @@
 #then use compose to assemble the images using the build command.
 
 FROM nginx:latest
-MAINTAINER NAME EMAIL
+MAINTAINER "naelson.g.saraiva@gmail.com"
 
 #RUN rm -rf /usr/share/nginx/html/*
 copy ./app/* /usr/share/nginx/html/

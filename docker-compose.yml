@@ -35,9 +35,8 @@ version: '3'
 
 services:
   web:
-    build: .
+    build:
+     context: ./images-nginx
     image: nginx
-    volumes:
-    - /storing/:/usr/share/nginx/html
     ports:
     - "8080:80"
