@@ -5,8 +5,6 @@
 FROM nginx:latest
 MAINTAINER NAME EMAIL
 
-RUN rm -rf /usr/share/nginx/html/*
-
+#RUN rm -rf /usr/share/nginx/html/*
 copy ./app/* /usr/share/nginx/html/
-
 RUN apt-get -y update && apt-get -y upgrade && apt-get install -y php-fpm
