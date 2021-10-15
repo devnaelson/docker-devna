@@ -13,20 +13,23 @@ services:
     ports:
       - "8080:80"
     volumes:
-#      - ./images-nginx/app:/usr/share/nginx/html
-       - ./images-nginx/app:/var/www/html
-  language:
+       - ./images-nginx/app:/usr/local/apache2/htdocs/
+    depends_on: 
+      - php
+    links:
+       - php  
+
+  php:
     build:
       context: ./php-dk
       dockerfile: Dockerfile
     networks:
       - code
     image: php
-    expose:
-      - "9000"   
+    ports:
+      - "9000:9000"
     volumes:
-#     - ./images-nginx/app:/usr/share/nginx/html
-      - ./images-nginx/app:/var/www/html
+      - ./images-nginx/app:/usr/share/nginx/html
 networks:
   code:
     driver: bridge
