@@ -14,14 +14,14 @@ services:
       - "8080:80"
     volumes:
        - ./images-apache/app:/usr/local/apache2/htdocs/
-    depends_on: 
+    depends_on:
       - php
     links:
-       - php  
+       - php
 
   php:
     build:
-      context: ./php-dk
+      context: ./image-php
       dockerfile: Dockerfile
     networks:
       - code
