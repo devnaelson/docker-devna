@@ -119,3 +119,9 @@ services:
 networks:
   back-tier:
     driver: bridge
+
+
+- How to get content of default nginx configuration file in Docker environment on Ubuntu
+```
+docker run -it nginx cat /etc/nginx/conf.d/default.conf
+```
