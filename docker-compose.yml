@@ -4,16 +4,16 @@ services:
 
   servidor:
     build:
-      context: ./images-nginx
+      context: ./images-apache
       dockerfile: Dockerfile
     networks:
       - code
-    image: nginx
+    image: apache
     restart: always
     ports:
       - "8080:80"
     volumes:
-       - ./images-nginx/app:/usr/local/apache2/htdocs/
+       - ./images-apache/app:/usr/local/apache2/htdocs/
     depends_on: 
       - php
     links:
@@ -29,7 +29,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./images-nginx/app:/usr/share/nginx/html
+      - ./images-apache/app:/usr/share/apache/html
 networks:
   code:
     driver: bridge
