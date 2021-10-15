@@ -13,8 +13,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./images-nginx/app:/usr/share/nginx/html
-
+#      - ./images-nginx/app:/usr/share/nginx/html
+       - ./images-nginx/app:/var/www/html
   language:
     build:
       context: ./php-dk
@@ -25,8 +25,8 @@ services:
     expose:
       - "9000"   
     volumes:
-     - ./images-nginx/app:/usr/share/nginx/html
-     
+#     - ./images-nginx/app:/usr/share/nginx/html
+      - ./images-nginx/app:/var/www/html
 networks:
   code:
     driver: bridge
