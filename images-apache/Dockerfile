@@ -5,8 +5,8 @@
 FROM php:7.4-apache
 MAINTAINER "naelson.g.saraiva@gmail.com"
 
-WORKDIR ./images-apache/app
-WORKDIR ./images-apache/config
+#WORKDIR ./images-apache/app
+#WORKDIR ./images-apache/config
 
 #RUN rm -rf /usr/share/nginx/html/*
 # copy ./app/* /usr/share/nginx/html/
