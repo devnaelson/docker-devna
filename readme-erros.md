@@ -127,5 +127,5 @@ docker run -it nginx cat /etc/nginx/conf.d/default.conf
 
 docker run -it nginx cat /etc/httpd/conf/httpd.conf.
 
-docker exec -it [container-id] bash
+sudo docker exec -it [container-id] bash
 ```
