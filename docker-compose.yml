@@ -12,7 +12,7 @@ services:
 #    restart: always check if i can problem because this
     ports:
       - "8080:80"
-    volumes:
+#   volumes:
 #      - ./images-apache/app:/usr/local/apache2/htdocs/
 #      - ./images-apache/config:/etc/apache2/
 #    depends_on: 
