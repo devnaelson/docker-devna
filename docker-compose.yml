@@ -16,21 +16,21 @@ services:
        - ./images-apache/app:/usr/local/apache2/htdocs/
 #    depends_on: 
 #      - php
-    links:
-       - php
-  php:
-    build:
-      context: ./image-php
-      dockerfile: Dockerfile
+#    links:
+#       - php
+#  php:
+#    build:
+#      context: ./image-php
+#      dockerfile: Dockerfile
 #    networks:
 #      - code
 #    image: php
-    ports:
-      - "9000:9000"
-    expose:
-      - "9000"
-    volumes:
-      - ./images-apache/app:/usr/share/nginx/html
+#    ports:
+#      - "9000:9000"
+#    expose:
+#      - "9000"
+#    volumes:
+#      - ./images-apache/app:/usr/share/nginx/html
 # networks:
 #  code:
 #    driver: bridge
