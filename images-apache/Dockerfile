@@ -8,6 +8,5 @@ MAINTAINER "naelson.g.saraiva@gmail.com"
 WORKDIR ./images-apache/app
 WORKDIR ./images-apache/config
 
-
 #RUN rm -rf /usr/share/nginx/html/*
 # copy ./app/* /usr/share/nginx/html/
