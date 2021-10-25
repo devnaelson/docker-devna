@@ -3,7 +3,7 @@
 #then use compose to assemble the images using the build command.
 
 FROM php:7.4-fpm-alpine
- 
+
 RUN apk update --no-cache \
 && apk add \
 icu-dev \

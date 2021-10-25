@@ -2,7 +2,9 @@
 #Your Docker workflow should be to build a suitable Dockerfile for each image you wish to create, 
 #then use compose to assemble the images using the build command.
 
-FROM php:7.4-apache
+#FROM php:7.4-apache
+FROM httpd:2.4
+
 MAINTAINER "naelson.g.saraiva@gmail.com"
 
 #WORKDIR ./images-apache/app

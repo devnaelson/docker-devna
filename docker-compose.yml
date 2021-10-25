@@ -13,25 +13,25 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./images-apache/app:/var/www/html
+      - ./images-apache/app:/usr/local/apache2/htdocs
 #      - ./images-apache/config:/etc/apache2/
 #    depends_on: 
 #      - php
-#    links:
-#       - php
-#  php:
-#    build:
-#      context: ./image-php
-#      dockerfile: Dockerfile
+    links:
+       - php
+  php:
+    build:
+      context: ./image-php
+      dockerfile: Dockerfile
 #    networks:
 #      - code
 #    image: php
-#    ports:
-#      - "9000:9000"
-#    expose:
-#      - "9000"
+    ports:
+      - "9000:9000"
+    expose:
+      - "9000"
 #    volumes:
-#      - ./images-apache/app:/usr/share/nginx/html
+#      - ./images-apache/app:/usr/local/apache2/htdocs
 # networks:
 #  code:
 #    driver: bridge
