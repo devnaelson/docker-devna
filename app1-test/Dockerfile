@@ -2,19 +2,9 @@
 #Your Docker workflow should be to build a suitable Dockerfile for each image you wish to create, 
 #then use compose to assemble the images using the build command.
 
-FROM php:7.4-fpm-alpine
+FROM php:7.2-apache
+COPY src/ /var/www/html/
 
-RUN apk update --no-cache \
-&& apk add \
-icu-dev \
-oniguruma-dev \
-tzdata
- 
-#RUN docker-php-ext-install intl
-#RUN docker-php-ext-install pcntl
-#RUN docker-php-ext-install pdo_mysql
-#RUN docker-php-ext-install mbstring
-
-RUN rm -rf /var/cache/apk/*
- 
-CMD ["php-fpm"]
+# sudo docker build -t phpseven .
+# sudo docker run -dp 8090:80 phpseven
+# sudo docker run -d --name phpruning phpseven
