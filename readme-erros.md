@@ -131,3 +131,12 @@ sudo docker exec -it [container-id] bash
 if case it dont work 
 docker exec -it <containerId> sh
 ```
+
+# ERROR: The Compose file './docker-compose.yml' is invalid because
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json?all=1": dial unix /var/run/docker.sock: connect: permission denied
+"docker container stop" requires at least 1 argument.
+See 'docker container stop --help'.
+
+```
+sudo chmod 666 /var/run/docker.sock
+```

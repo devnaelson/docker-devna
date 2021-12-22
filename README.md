@@ -68,3 +68,12 @@ $ docker ps -a
 ```
 $ docker ps --all
 ```
+
+```
+Remover all images
+docker image prune -a
+docker rmi -f $(docker images -aq)
+
+remover all container
+docker container rm $(docker container ls -aq)
+```
