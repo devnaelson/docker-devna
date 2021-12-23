@@ -3,7 +3,7 @@
 #then use compose to assemble the images using the build command.
 
 FROM php:7.2-apache
-COPY src/ /var/www/html/
+#COPY src/ /var/www/html/
 
 # sudo docker build -t phpseven .
 # sudo docker run -dp 8090:80 phpseven
