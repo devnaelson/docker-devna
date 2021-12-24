@@ -3,7 +3,7 @@
 echo 'Versão Atual do PHP: ' . phpversion();
 //echo 'Versão Atual do PHP: ' . phpinfo();
 
-$hostname_d = "127.0.0.1";
+$hostname_d = "host.docker.internal";
 $username_d = "usernaelson";
 $password_d = "admin1234.";
 $database_d = "test";

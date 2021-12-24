@@ -10,8 +10,6 @@ services:
 
     ports:
       - "8090:80"
-    networks:
-      - apptest
     volumes:
       - ./php-apache/src:/var/www/html/
     depends_on:
@@ -28,8 +26,6 @@ services:
       - MYSQL_USER=usernaelson
       - MYSQL_PASSWORD=admin1234.
       - MYSQL_DATABASE=test
-    networks:
-      - apptest 
 
   adminer:
     image: adminer
@@ -37,8 +33,4 @@ services:
     ports:
       - 8081:8080
 
-#Docker Networks
-networks:
-    apptest:
-      ipv4_address: 172.16.238.10
-      driver: bridge
+#Docker Networks created by default reference network.md
