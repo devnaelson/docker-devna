@@ -2,14 +2,14 @@
 - the heve several off way to connect, separeted host, single host 
 
 referênces https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach 
-
+```
 4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
     link/ether 02:42:33:24:6f:1e brd ff:ff:ff:ff:ff:ff
     inet ```172.17.0.1/16``` brd 172.17.255.255 scope global docker0
        valid_lft forever preferred_lft forever
     inet6 fe80::42:33ff:fe24:6f1e/64 scope link 
        valid_lft forever preferred_lft forever
-
+```
 - This IP is important to connect internal
 
 
