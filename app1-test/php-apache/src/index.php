@@ -1,16 +1,17 @@
 <?php
 
 echo 'Versão Atual do PHP: ' . phpversion();
+//echo 'Versão Atual do PHP: ' . phpinfo();
 
-$servername = "testComposer";
-$username = "root";
-$password = "admin123.";
+$hostname_d = "127.0.0.1";
+$username_d = "usernaelson";
+$password_d = "admin1234.";
+$database_d = "test";
 
 try {
-    $run_federal = new PDO("mysql:host=localhost;dbname=" . $servername . ";charset=utf8", $username, $password);
-    $run_federal->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "true";
+    $conn = new PDO("mysql:host=$hostname_d;port=3307;dbname=" . $database_d . ";charset=utf8", $username_d, $password_d);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "connected";
 } catch (PDOException $e) {
-    error_reporting(0);
-    echo "Erro de conexão main.php, Linha:" . __LINE__;
+    echo "Connection failed: " . $e->getMessage();
 }

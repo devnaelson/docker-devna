@@ -6,20 +6,39 @@ services:
     build:
       context: ./php-apache
       dockerfile: Dockerfile
+    container_name: web  
+
     ports:
       - "8090:80"
+    networks:
+      - apptest
     volumes:
       - ./php-apache/src:/var/www/html/
-
-    links:
+    depends_on:
       - mysqldb
 
   mysqldb:
-    image: mysql
-
+    container_name: dev-mysql  
+    image: mysql:5.7.36
+    restart: always
     ports:
-      - "3308:3306" #just add in workbench and it gonna work
-      
+      - "3307:3306" #just add in workbench and it gonna work
     environment:
-      - MYSQL_ROOT_PASSWORD=admin123.
-      - MYSQL_DATABASE=testComposer
+      - MYSQL_ALLOW_EMPTY_PASSWORD=false
+      - MYSQL_USER=usernaelson
+      - MYSQL_PASSWORD=admin1234.
+      - MYSQL_DATABASE=test
+    networks:
+      - apptest 
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+#Docker Networks
+networks:
+    apptest:
+      ipv4_address: 172.16.238.10
+      driver: bridge
