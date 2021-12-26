@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+
+  web:
+    build:
+      context: ./php-apache
+      dockerfile: Dockerfile
+    container_name: web  
+
+    ports:
+      - "8090:80"
+    volumes:
+      - ./php-apache/src:/var/www/html/
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    container_name: dev-mysql  
+    image: mysql:5.7.36
+    restart: always
+    ports:
+      - "3307:3306" #just add in workbench and it gonna work
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=false
+      - MYSQL_USER=usernaelson
+      - MYSQL_PASSWORD=admin1234.
+      - MYSQL_DATABASE=test
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+#Docker Networks created by default reference network.md
