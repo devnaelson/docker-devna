@@ -6,7 +6,7 @@ services:
     build:
       context: ./php-apache
       dockerfile: Dockerfile
-    container_name: web  
+    container_name: dev-web  
 
     ports:
       - "8090:80"
@@ -16,6 +16,9 @@ services:
       - mysqldb
 
   mysqldb:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
     container_name: dev-mysql  
     image: mysql:5.7.36
     restart: always

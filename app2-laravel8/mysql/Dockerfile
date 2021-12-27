@@ -2,15 +2,7 @@
 #Your Docker workflow should be to build a suitable Dockerfile for each image you wish to create, 
 #then use compose to assemble the images using the build command.
 
-FROM php:8.0-apache
+FROM mysql:5.7.36
 
 # Update aptitude with new repo
 RUN apt-get update
-
-RUN docker-php-ext-install pdo_mysql
-
-COPY src/ /var/www/html/
-
-# sudo docker build -t phpseven .
-# sudo docker run -dp 8090:80 phpseven
-# sudo docker run -d --name phpruning phpseven
